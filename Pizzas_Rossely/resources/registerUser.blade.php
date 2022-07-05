@@ -53,29 +53,38 @@
             <div class="login-wrap py-5">
               <div class="img d-flex align-items-center justify-content-center" style="background-image: url(images/Pizza.png);"></div>
                 <h3 class="text-center mb-0">Bienvenido</h3>
-                <p class="text-center">Inicia sesión para conocer nuestros procesos</p>
+                <p class="text-center">Registrate para poder iniciar sesión</p>
                 <form action="#" class="login-form">
                   <div class="form-group">
-                    <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-user"></span></div>
-                    <input type="text" class="form-control" placeholder="Usuario" required>
+                    <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-file-image-o"></span></div>
+                    <input class="form-control" type="file" required="obligatorio">
                   </div>
                   <div class="form-group">
-                    <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-lock"></span></div>
-                    <input type="password" class="form-control" placeholder="Contraseña" required>
+                      <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-user"></span></div>
+                      <input type="text" class="form-control" minlength="3" maxlength="30" placeholder="Nombre" required>
                   </div>
-                  <div class="form-group d-md-flex">
-                    <div class="w-100 text-md-right"><a href="#">¿Olvidó su contraseña?</a></div>
+                  <div class="form-group">
+                    <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-user"></span></div>
+                    <input type="text" class="form-control" minlength="3" maxlength="30" placeholder="Apellido paterno" required>
+                  </div>
+                  <div class="form-group">
+                    <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-user"></span></div>
+                    <input type="text" class="form-control" minlength="3" maxlength="30" placeholder="Apellido materno" required>
+                  </div>
+                  <div class="form-group">
+                      <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-user"></span></div>
+                      <input type="text" class="form-control" placeholder="Usuario" required>
+                  </div>
+                  <div class="form-group">
+                      <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-lock"></span></div>
+                      <input type="password" class="form-control" placeholder="Contraseña" required>
                   </div>
                   <div class="form-group"> 
-                    <a type="submit" href="dashboard.html" class="btn form-control btn-primary rounded submit py-3 px-4">
-                        Iniciar Sesión
-                    </a>
+                      <a type="submit" href="login.html" class="btn form-control btn-primary rounded submit py-3 px-4">
+                          Guardar
+                      </a>
                   </div>
-                </form>
-              <div class="w-100 text-center mt-4 text">
-                <p class="mb-0">¿No tiene una cuenta?</p>
-                <a href="registerUser.html">Registrarse</a>
-              </div>          
+              </form>        
             </div>
           </div>
         </div>
