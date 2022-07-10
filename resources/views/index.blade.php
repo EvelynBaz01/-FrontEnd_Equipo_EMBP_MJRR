@@ -42,7 +42,7 @@
 	</nav>
     <!-- END nav -->
 
-    <section class="home-slider owl-carousel img" style="background-image: url(images/bg_1.jpg);">
+    <section class="home-slider owl-carousel img" style="background-image: url(assets/images/bg_1.jpg)">
       <div class="slider-item">
       	<div class="overlay"></div>
         <div class="container">
@@ -54,7 +54,7 @@
               <p class="mb-4 mb-md-5">Un sabor rico para su paladar</p>
             </div>
             <div class="col-md-6 ftco-animate">
-            	<img src="images/bg_1.png" class="img-fluid" alt="">
+            	<img src="assets/images/bg_1.png" class="img-fluid" alt="">
             </div>
           </div>
         </div>
@@ -71,14 +71,14 @@
               <p class="mb-4 mb-md-5">Un sabor especial</p>
             </div>
             <div class="col-md-6 ftco-animate">
-            	<img src="images/bg_2.png" class="img-fluid" alt="">
+            	<img src="assets/images/bg_2.png" class="img-fluid" alt="">
             </div>
 
           </div>
         </div>
       </div>
 
-      <div class="slider-item" style="background-image: url(images/bg_3.jpg);">
+      <div class="slider-item" style="background-image: url(assets/images/bg_3.jpg);">
       	<div class="overlay"></div>
         <div class="container">
           <div class="row slider-text justify-content-center align-items-center" data-scrollax-parent="true">
