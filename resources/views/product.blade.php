@@ -104,7 +104,7 @@
                     <td>
                       <div class="btn-group">
                         <a class="btn btn-primaryA" href="{{ route('registrar_producto') }}"><i class="fa fa-lg fa-edit"></i></a>
-                        <a class="btn btn-primaryR" href="#"><i class="fa fa-lg fa-trash"></i></a>
+                        <a class="btn btn-primaryR" onclick="return confirm('El registro no estará disponible para operaciones en el sistema.')" href="#"><i class="fa fa-lg fa-trash"></i></a>
                       </div>
                     </td>
                   </tr>
@@ -120,7 +120,7 @@
                     <td>
                       <div class="btn-group">
                         <a class="btn btn-primaryA" href="{{ route('registrar_producto') }}"><i class="fa fa-lg fa-edit"></i></a>
-                        <a class="btn btn-primaryR" href="#"><i class="fa fa-lg fa-trash"></i></a>
+                        <a class="btn btn-primaryR" onclick="return confirm('El registro no estará disponible para operaciones en el sistema.')" href="#"><i class="fa fa-lg fa-trash"></i></a>
                       </div>
                     </td>
                   </tr>
@@ -136,7 +136,7 @@
                     <td>
                       <div class="btn-group">
                         <a class="btn btn-primaryA" href="{{ route('registrar_producto') }}"><i class="fa fa-lg fa-edit"></i></a>
-                        <a class="btn btn-primaryR" href="#"><i class="fa fa-lg fa-trash"></i></a>
+                        <a class="btn btn-primaryR" onclick="return confirm('El registro no estará disponible para operaciones en el sistema.')" href="#"><i class="fa fa-lg fa-trash"></i></a>
                       </div>
                     </td>
                   </tr>
@@ -154,6 +154,7 @@
     <script src="{{ asset('assets/jsdash/main.js') }}"></script>
     <!-- The javascript plugin to display page loading on top-->
     <script src="{{ asset('assets/jsdash/plugins/pace.min.js') }}"></script>
+    <script src="{{ asset('assets/js/alerta.js') }}"></script>
     
   </body>
 </html>

@@ -156,10 +156,10 @@
                   </div>
                   <div class="col-md-3">
                     <div class="form-group">
-                      <a type="submit" href="{{ route('lista_productos') }}" class="btn btn-primaryV rounded submit py-3 px-4">
+                      <a type="submit" onclick="Alertabtn()" href="{{ route('lista_productos') }}" class="btn btn-primaryV rounded submit py-3 px-4">
                         Guardar
                       </a>
-                      <a type="submit" href="{{ route('lista_productos') }}" class="btn btn-primaryG rounded submit py-3 px-4">
+                      <a type="submit" onclick="AlertaCancel()" href="{{ route('lista_productos') }}" class="btn btn-primaryG rounded submit py-3 px-4">
                         Cancelar
                       </a>
                     </div>
@@ -177,6 +177,7 @@
     <script src="{{ asset('assets/jsdash/main.js') }}"></script>
     <!-- The javascript plugin to display page loading on top-->
     <script src="{{ asset('assets/jsdash/plugins/pace.min.js') }}"></script>
+    <script src="{{ asset('assets/js/alerta.js') }}"></script>
     
   </body>
 </html>

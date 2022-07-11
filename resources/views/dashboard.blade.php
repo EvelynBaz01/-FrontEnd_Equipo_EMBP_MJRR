@@ -92,6 +92,7 @@
     <script src="{{ asset('assets/jsdash/main.js') }}"></script>
     <!-- The javascript plugin to display page loading on top-->
     <script src="{{ asset('assets/jsdash/plugins/pace.min.js') }}"></script>
+    <script src="{{ asset('assets/js/alerta.js') }}"></script>
     
   </body>
 </html>
