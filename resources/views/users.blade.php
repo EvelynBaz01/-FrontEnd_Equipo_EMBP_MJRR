@@ -53,7 +53,7 @@
             <li class="treeview"><a class="app-menu__item active" href="" data-toggle="treeview"><i class="app-menu__icon icon fa fa-users"></i><span class="app-menu__label">Usuarios</span><i class="treeview-indicator fa fa-angle-right"></i></a>
               <ul class="treeview-menu">
                 <li><a class="treeview-item" href="{{ '/usuarios/index' }}"><i class="icon fa fa-circle-o"></i> Lista de usuarios</a></li>
-                <li><a class="treeview-item" href="{{ route('registrar_usuario') }}"><i class="icon fa fa-circle-o"></i> Registrar usuarios</a></li>
+                <li><a class="treeview-item" href="{{ '/usuarios/create' }}"><i class="icon fa fa-circle-o"></i> Registrar usuarios</a></li>
               </ul>
             </li>
             <li class="treeview"><a class="app-menu__item" href="" data-toggle="treeview"><i class="app-menu__icon fa fa-pie-chart"></i><span class="app-menu__label">Productos</span><i class="treeview-indicator fa fa-angle-right"></i></a>
@@ -98,14 +98,14 @@
                     <td>{{ $user->usuario }}</td>
                     <td>
                       <div class="btn-group">
-                        <a class="btn btn-primaryA" onclick="location.href='{{ url('usuarios/edit/'.$usuarios->id) }}'"><i class="fa fa-lg fa-edit"></i></a>
+                        <button class="btn btn-primaryA" onclick="location.href='{{ url('usuarios/edit/'.$user->id) }}'"><i class="fa fa-lg fa-edit"></i></button>
                       </div>
                     </td>
                     <td>
-                      <form action="{{ action('App\Http\Controllers\UsuarioController@destroy', $usuarios->id) }}" method="POST">
+                      <form method="POST" action="{{ action('App\Http\Controllers\UsuarioController@destroy', $user->id) }}">
                         {{ method_field('DELETE') }}
                         {{ @csrf_field() }}
-                        <a class="btn btn-primaryR" onclick="return confirm('El registro no estará disponible para operaciones en el sistema.')"><i class="fa fa-lg fa-trash"></i></a>
+                        <button type="submit" class="btn btn-primaryR" onclick="return confirm('¿Esta seguro de eliminar?')"><i class="fa fa-lg fa-trash"></i></button>
                       </form>
                     </td>
                   </tr>

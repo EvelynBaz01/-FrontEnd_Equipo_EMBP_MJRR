@@ -11,7 +11,7 @@ class UsuarioController extends Controller
     {
         $usuarios = Usuario::all();
         $client = new \GuzzleHttp\Client(['verify' => false]);
-        $request = $client->get('http://localhost/API_Pizza/usuario/');
+        $request = $client->get('http://localhost/BackEnd_Equipo_EMBP_MJRR_DWI/usuario/');
         $response = $request->getBody()->getContents();        
         $usuarios = json_decode($response);
         return view('users', compact('usuarios'));
@@ -25,7 +25,7 @@ class UsuarioController extends Controller
     public function store(Request $request)
     {
         $client = new \GuzzleHttp\Client(['verify' => false]);
-        $response = $client->request('POST', 'http://localhost/API_Pizza/usuario/', [
+        $response = $client->request('POST', 'http://localhost/BackEnd_Equipo_EMBP_MJRR_DWI/usuario/', [
             'json' => [
                 'imagen' => $request->input('imagen'),
                 'nombre' => $request->input('nombre'),
@@ -43,16 +43,16 @@ class UsuarioController extends Controller
     public function edit($id)
     {
         $client = new \GuzzleHttp\Client(['verify' => false]);
-        $request = $client->get('http://localhost/API_Pizza/usuario/'.$id);
+        $request = $client->get('http://localhost/BackEnd_Equipo_EMBP_MJRR_DWI/usuario/'.$id);
         $response = $request->getBody()->getContents();
         $usuarios = json_decode($response);
-        return view('Userupdate', compact('uusuarios'));
+        return view('Userupdate', compact('usuarios'));
     }
 
     public function update(Request $request, $id)
     {
         $client = new \GuzzleHttp\Client(['verify' => false]);
-        $response = $client->request('PUT', 'http://localhost/API_Pizza/usuario/'.$id, [
+        $response = $client->request('PUT', 'http://localhost/BackEnd_Equipo_EMBP_MJRR_DWI/usuario/'.$id, [
             'json' => [
                 'imagen' => $request->input('imagen'),
                 'nombre' => $request->input('nombre'),
@@ -70,7 +70,7 @@ class UsuarioController extends Controller
     public function destroy($id)
     {
         $client = new \GuzzleHttp\Client(['verify' => false]);
-        $response = $client->request('DELETE', 'http://localhost/API_Pizza/usuario/'.$id);
+        $response = $client->request('DELETE', 'http://localhost/BackEnd_Equipo_EMBP_MJRR_DWI/usuario/'.$id);
         $response = $response->getBody()->getContents();
         return redirect('usuarios/index')->with('message',$response);
     }
