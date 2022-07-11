@@ -54,33 +54,34 @@
               <div class="img d-flex align-items-center justify-content-center" style="background-image: url(assets/images/Pizza.png);"></div>
                 <h3 class="text-center mb-0">Bienvenido</h3>
                 <p class="text-center">Registrate para poder iniciar sesión</p>
-                <form action="#" class="login-form">
-                  <div class="form-group">
+                <form class="login-form" novalidate method="POST" action="{{ url('/clientes/store') }}">
+                {{ @csrf_field() }}  
+                <div class="form-group">
                     <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-file-image-o"></span></div>
-                    <input class="form-control" type="file" required="obligatorio">
+                    <input class="form-control" name="imagen" type="file" required="obligatorio">
                   </div>
                   <div class="form-group">
                       <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-user"></span></div>
-                      <input type="text" class="form-control" minlength="3" maxlength="30" placeholder="Nombre" required>
+                      <input type="text" name="nombre" class="form-control" minlength="3" maxlength="30" placeholder="Nombre" required>
                   </div>
                   <div class="form-group">
                     <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-user"></span></div>
-                    <input type="text" class="form-control" minlength="3" maxlength="30" placeholder="Apellido paterno" required>
+                    <input type="text" name="a_paterno" class="form-control" minlength="3" maxlength="30" placeholder="Apellido paterno" required>
                   </div>
                   <div class="form-group">
                     <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-user"></span></div>
-                    <input type="text" class="form-control" minlength="3" maxlength="30" placeholder="Apellido materno" required>
+                    <input type="text" name="a_materno" class="form-control" minlength="3" maxlength="30" placeholder="Apellido materno" required>
                   </div>
                   <div class="form-group">
                       <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-user"></span></div>
-                      <input type="text" class="form-control" placeholder="Usuario" required>
+                      <input type="text" name="usuario" class="form-control" placeholder="Usuario" required>
                   </div>
                   <div class="form-group">
                       <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-lock"></span></div>
-                      <input type="password" class="form-control" placeholder="Contraseña" required>
+                      <input type="password" name="contrasena" class="form-control" placeholder="Contraseña" required>
                   </div>
                   <div class="form-group"> 
-                      <a type="submit" href="{{ route('iniciar_sesion') }}" class="btn form-control btn-primary rounded submit py-3 px-4">
+                      <a type="submit" class="btn form-control btn-primary rounded submit py-3 px-4">
                           Guardar
                       </a>
                   </div>

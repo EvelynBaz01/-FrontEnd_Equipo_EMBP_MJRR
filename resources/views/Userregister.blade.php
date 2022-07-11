@@ -75,12 +75,13 @@
       <div class="row">
         <div class="col-md-12">
           <div class="tile">
-            <div class="tile-body">
-                <form class="row">
+                <form  novalidate method="POST" action="{{ url('/usuarios/store') }}">
+                {{ @csrf_field() }}  
+            <div class="tile-body row">
                     <div class="col-md-4">
                         <div class="form-group">
                         <label for="img">Foto</label>
-                        <input class="form-control" type="file" required="obligatorio">
+                        <input class="form-control" name="imagen" type="file" required="obligatorio">
                         </div>
                     </div>
                     <div class="col-md-4">
@@ -92,17 +93,15 @@
                     <div class="col-md-4">
                         <div class="form-group">
                         <label for="Apellido_pat">Apellido Paterno</label>
-                        <input type="text" class="form-control" name="Apellido_pat" id="Apellido_pat" required="obligatorio" minlength="3" maxlength="40">
+                        <input type="text" class="form-control" name="a_paterno" id="Apellido_pat" required="obligatorio" minlength="3" maxlength="40">
                         </div>
                     </div>
-                </form>
             </div> 
-            <div class="tile-body">
-                <form class="row">
+            <div class="tile-body row">
                     <div class="col-md-4">
                         <div class="form-group">
                         <label for="Apellido_mat">Apellido Materno</label>
-                        <input type="text" class="form-control" name="Apellido_mat" id="Apellido_mat" required="obligatorio" minlength="3" maxlength="40">
+                        <input type="text" class="form-control" name="a_materno" id="Apellido_mat" required="obligatorio" minlength="3" maxlength="40">
                         </div>
                     </div>
                     <div class="col-md-4">
@@ -114,15 +113,15 @@
                     <div class="col-md-4">
                         <div class="form-group">
                         <label for="password">Contraseña</label>
-                        <input type="password" class="form-control" name="password" id="password" required="obligatorio" minlength="3" maxlength="40">
+                        <input type="password" class="form-control" name="contrasena" id="password" required="obligatorio" minlength="3" maxlength="40">
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="form-group">
-                        <a type="submit" onclick="Alertabtn()" href="{{ route('lista_usuarios') }}" class="btn btn-primaryV rounded submit py-3 px-4">
+                        <button type="submit" onclick="Alertabtn()" class="btn btn-primaryV rounded submit py-3 px-4">
                             Guardar
-                        </a>
-                        <a type="submit" onclick="AlertaCancel()" href="{{ route('lista_usuarios') }}" class="btn btn-primaryG rounded submit py-3 px-4">
+                        </button>
+                        <a type="submit" onclick="AlertaCancel()"  href="{{ route('registrar_usuario') }}" class="btn btn-primaryG rounded submit py-3 px-4">
                             Cancelar
                         </a>
                         </div>

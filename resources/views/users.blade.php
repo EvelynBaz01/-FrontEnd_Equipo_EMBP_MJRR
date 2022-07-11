@@ -75,17 +75,16 @@
       <div class="row">
         <div class="col-md-12">
           <div class="tile">
-            <p><a class="btn btn-primaryV icon-btn" href="{{ route('registrar_usuario') }}"><i class="fa fa-plus"></i>Agregar usuario</a></p>
+            <p><a class="btn btn-primaryV icon-btn" href="{{ '/usuarios/create' }}"><i class="fa fa-plus"></i>Agregar usuario</a></p>
             <div class="tile-body">
               <table class="table table-striped">
                 <thead align="center">
                   <tr>
                     <th>#</th>
                     <th>Imagen</th>
-                    <th>Usuario</th>
-                    <th>Contraseña</th>
                     <th>Nombre(s)</th>
                     <th>Apellidos</th>
+                    <th>Usuario</th>
                     <th>Acciones</th>
                   </tr>
                 </thead>
@@ -95,8 +94,7 @@
                     <td>{{ $loop->index }}</td>
                     <td>{{ $user->imagen }}<img src="" alt="user1"></td>
                     <td>{{ $user->nombre }}</td>
-                    <td>{{ $user->a_paterno }}</td>
-                    <td>{{ $user->a_materno }}</td>
+                    <td>{{ $user->a_paterno }} {{ $user->a_materno }}</td>
                     <td>{{ $user->usuario }}</td>
                     <td>
                       <div class="btn-group">
