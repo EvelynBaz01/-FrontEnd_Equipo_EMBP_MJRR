@@ -66,4 +66,12 @@ class UsuarioController extends Controller
         $json = json_decode($response);
         return redirect('usuarios/index')->with('message',$response);
     }
+
+    public function destroy($id)
+    {
+        $client = new \GuzzleHttp\Client(['verify' => false]);
+        $response = $client->request('DELETE', 'http://localhost/API_Pizza/usuario/'.$id);
+        $response = $response->getBody()->getContents();
+        return redirect('usuarios/index')->with('message',$response);
+    }
 }
