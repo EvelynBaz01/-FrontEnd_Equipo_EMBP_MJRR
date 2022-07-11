@@ -42,7 +42,7 @@ Route::get('/dashboard', function () {
 })->name('panel_adm');
 
 Route::get('/users', function () {
-    return view('user');
+    return view('users');
 })->name('lista_usuarios');
 
 Route::get('/Userregister', function () {

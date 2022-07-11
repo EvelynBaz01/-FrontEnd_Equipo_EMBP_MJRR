@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
   <head>
     <title>Pizzas Rossely</title>
     <meta name="description" content="Vali is a responsive and free admin theme built with Bootstrap 4, SASS and PUG.js. It's fully customizable and modular.">
@@ -18,13 +18,13 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="css/maindash.css">
-    <link rel="stylesheet" type="text/css" href="css/tablas.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/maindash.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/tablas.css') }}">
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
   <body class="app sidebar-mini rtl">
     <header class="app-header">
-        <a class="app-header__logo" href="dashboard.html">Pizzas Rossely</a>
+        <a class="app-header__logo" href="{{ route('panel_adm') }}">Pizzas Rossely</a>
       <a class="app-sidebar__toggle" href="#" data-toggle="sidebar" aria-label="Hide Sidebar"></a>
       <ul class="app-nav">
         <li class="app-search">
@@ -34,7 +34,7 @@
         <!-- User Menu-->
         <li class="dropdown"><a class="app-nav__item" href="#" data-toggle="dropdown" aria-label="Open Profile Menu"><i class="fa fa-user fa-lg"></i></a>
           <ul class="dropdown-menu settings-menu dropdown-menu-right">
-            <li><a class="dropdown-item" href="login.html"><i class="fa fa-sign-out fa-lg"></i>Cerrar Sesión</a></li>
+            <li><a class="dropdown-item" href="{{ route('iniciar_sesion') }}"><i class="fa fa-sign-out fa-lg"></i>Cerrar Sesión</a></li>
           </ul>
         </li>
       </ul>
@@ -43,24 +43,24 @@
     <div class="app-sidebar__overlay" data-toggle="sidebar"></div>
     <aside class="app-sidebar">
         <div class="app-sidebar__user">
-            <img class="app-sidebar__user-avatar" src="images/Pizza.png">
+            <img class="app-sidebar__user-avatar" src="assets/images/Pizza.png">
             <div>
                 <p class="app-sidebar__user-name">Evelyn Baz Pérez</p>
                 <p class="app-sidebar__user-designation">Administrador</p>
             </div>
         </div>
         <ul class="app-menu">
-            <li><a class="app-menu__item" href="dashboard.html"><i class="app-menu__icon fa fa-id-card-o"></i><span class="app-menu__label">Inicio</span></a></li>
+            <li><a class="app-menu__item" href="{{ route('panel_adm') }}"><i class="app-menu__icon fa fa-id-card-o"></i><span class="app-menu__label">Inicio</span></a></li>
             <li class="treeview"><a class="app-menu__item active" href="" data-toggle="treeview"><i class="app-menu__icon icon fa fa-users"></i><span class="app-menu__label">Usuarios</span><i class="treeview-indicator fa fa-angle-right"></i></a>
                 <ul class="treeview-menu">
-                  <li><a class="treeview-item" href="users.html"><i class="icon fa fa-circle-o"></i> Lista de usuarios</a></li>
-                  <li><a class="treeview-item" href="Userregister.html"><i class="icon fa fa-circle-o"></i> Registrar usuarios</a></li>
+                  <li><a class="treeview-item" href="{{ route('lista_usuarios') }}"><i class="icon fa fa-circle-o"></i> Lista de usuarios</a></li>
+                  <li><a class="treeview-item" href="{{ route('registrar_usuario') }}"><i class="icon fa fa-circle-o"></i> Registrar usuarios</a></li>
                 </ul>
             </li>
             <li class="treeview"><a class="app-menu__item" href="" data-toggle="treeview"><i class="app-menu__icon fa fa-pie-chart"></i><span class="app-menu__label">Productos</span><i class="treeview-indicator fa fa-angle-right"></i></a>
               <ul class="treeview-menu">
-                <li><a class="treeview-item" href="product.html"><i class="icon fa fa-circle-o"></i> Lista de productos</a></li>
-                <li><a class="treeview-item" href="registerProd.html"><i class="icon fa fa-circle-o"></i> Registrar productos</a></li>
+                <li><a class="treeview-item" href="{{ route('lista_productos') }}"><i class="icon fa fa-circle-o"></i> Lista de productos</a></li>
+                <li><a class="treeview-item" href="{{ route('registrar_producto') }}"><i class="icon fa fa-circle-o"></i> Registrar productos</a></li>
               </ul>
             </li>
         </ul>
@@ -120,10 +120,10 @@
                     </div>
                     <div class="col-md-4">
                         <div class="form-group">
-                        <a type="submit" href="users.html" class="btn btn-primaryV rounded submit py-3 px-4">
+                        <a type="submit" href="{{ route('lista_usuarios') }}" class="btn btn-primaryV rounded submit py-3 px-4">
                             Guardar
                         </a>
-                        <a type="submit" href="users.html" class="btn btn-primaryG rounded submit py-3 px-4">
+                        <a type="submit" href="{{ route('lista_usuarios') }}" class="btn btn-primaryG rounded submit py-3 px-4">
                             Cancelar
                         </a>
                         </div>
@@ -134,13 +134,13 @@
         </div>
       </div>
     </main>
-    <!-- Essential javascripts for application to work-->
-    <script src="jsdash/jquery-3.2.1.min.js"></script>
-    <script src="jsdash/popper.min.js"></script>
-    <script src="jsdash/bootstrap.min.js"></script>
-    <script src="jsdash/main.js"></script>
+     <!-- Essential javascripts for application to work-->
+     <script src="{{ asset('assets/jsdash/jquery-3.2.1.min.js') }}"></script>
+    <script src="{{ asset('assets/jsdash/popper.min.js') }}"></script>
+    <script src="{{ asset('assets/jsdash/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('assets/jsdash/main.js') }}"></script>
     <!-- The javascript plugin to display page loading on top-->
-    <script src="jsdash/plugins/pace.min.js"></script>
+    <script src="{{ asset('assets/jsdash/plugins/pace.min.js') }}"></script>
     
   </body>
 </html>
