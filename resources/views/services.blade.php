@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
   <head>
     <title>Pizzas Rossely</title>
     <meta charset="utf-8">
@@ -9,42 +9,42 @@
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Nothing+You+Could+Do" rel="stylesheet">
 
-    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
-    <link rel="stylesheet" href="css/animate.css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="css/magnific-popup.css">
-    <link rel="stylesheet" href="css/aos.css">
-    <link rel="stylesheet" href="css/ionicons.min.css">
-    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
-    <link rel="stylesheet" href="css/jquery.timepicker.css">
-    <link rel="stylesheet" href="css/flaticon.css">
-    <link rel="stylesheet" href="css/icomoon.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="{{ asset('assets/css/open-iconic-bootstrap.min.css') }}"> 
+    <link rel="stylesheet" href="{{ asset('assets/css/animate.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/owl.theme.default.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/magnific-popup.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/aos.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/ionicons.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap-datepicker.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/jquery.timepicker.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/flaticon.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/icomoon.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
   </head>
   <body>
   	<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 	    <div class="container">
-		      <a class="navbar-brand" href="index.html"><span class="flaticon-pizza-1 mr-1"></span>Pizzas<br><small>Rossely</small></a>
+		      <a class="navbar-brand" href="{{ route('inicio') }}"><span class="flaticon-pizza-1 mr-1"></span>Pizzas<br><small>Rossely</small></a>
 		      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 		        <span class="oi oi-menu"></span> Menú
 		      </button>
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav ml-auto">
-	          <li class="nav-item"><a href="index.html" class="nav-link">Inicio</a></li>
-	          <li class="nav-item"><a href="about.html" class="nav-link">¿Quiénes Somos?</a></li>
-			      <li class="nav-item active"><a href="services.html" class="nav-link">Servicios</a></li>
-	          <li class="nav-item"><a href="contact.html" class="nav-link">Contacto</a></li>
-			      <li class="nav-item"><a href="login.html" class="nav-link">Iniciar Sesión</a></li>
+	        	<li class="nav-item"><a href="{{ route('inicio') }}" class="nav-link">Inicio</a></li>
+	          	<li class="nav-item"><a href="{{ route('quienes_somos') }}" class="nav-link">¿Quiénes Somos?</a></li>
+			    <li class="nav-item active"><a href="{{ route('servicios') }}" class="nav-link">Servicios</a></li>
+	          	<li class="nav-item"><a href="{{ route('contacto') }}" class="nav-link">Contacto</a></li>
+			    <li class="nav-item"><a href="{{ route('iniciar_sesion') }}" class="nav-link">Iniciar Sesión</a></li>
 	        </ul>
 	      </div>
 		  </div>
 	  </nav>
     <!-- END nav -->
 
-    <section class="home-slider owl-carousel img" style="background-image: url(images/bg_1.jpg);">
+    <section class="home-slider owl-carousel img" style="background-image: url(assets/images/bg_1.jpg);">
 
-      <div class="slider-item" style="background-image: url(images/bg_3.jpg);">
+      <div class="slider-item" style="background-image: url(assets/images/bg_3.jpg);">
       	<div class="overlay"></div>
         <div class="container">
           <div class="row slider-text justify-content-center align-items-center">
@@ -118,7 +118,7 @@
     		<div class="row">
     			<div class="col-md-3 text-center ftco-animate">
       			<div class="menu-wrap">
-      				<a href="#" class="menu-img img mb-4" style="background-image: url(images/Pizza.png);"></a>
+      				<a href="#" class="menu-img img mb-4" style="background-image: url(assets/images/Pizza.png);"></a>
       				<div class="text">
       					<h3><a href="#">Pizza ROSSELY</a></h3>
       					<p>Champiñones, salami, jalapeños, pepperoni y tocino</p>
@@ -127,7 +127,7 @@
       		</div>
       		<div class="col-md-3 text-center ftco-animate">
       			<div class="menu-wrap">
-      				<a href="#" class="menu-img img mb-4" style="background-image: url(images/pepperoni.jpg);"></a>
+      				<a href="#" class="menu-img img mb-4" style="background-image: url(assets/images/pepperoni.jpg);"></a>
       				<div class="text">
       					<h3><a href="#">Pizza Pepperoni</a></h3>
       					<p>Pepperoni y queso</p>
@@ -136,7 +136,7 @@
       		</div>
       		<div class="col-md-3 text-center ftco-animate">
       			<div class="menu-wrap">
-      				<a href="#" class="menu-img img mb-4" style="background-image: url(images/vegetariana.jpg);"></a>
+      				<a href="#" class="menu-img img mb-4" style="background-image: url(assets/images/vegetariana.jpg);"></a>
       				<div class="text">
       					<h3><a href="#">Pizza Vegetariana</a></h3>
       					<p>Champiñones, elote, pimiento y jitomate</p>
@@ -145,7 +145,7 @@
       		</div>
       		<div class="col-md-3 text-center ftco-animate">
       			<div class="menu-wrap">
-      				<a href="#" class="menu-img img mb-4" style="background-image: url(images/HawaianaEsp.jpg);"></a>
+      				<a href="#" class="menu-img img mb-4" style="background-image: url(assets/images/HawaianaEsp.jpg);"></a>
       				<div class="text">
       					<h3><a href="#">Pizza Hawaiana Especial</a></h3>
       					<p>Jamón, piña, durazno y cerezas</p>
@@ -156,7 +156,7 @@
         <div class="row">
     			<div class="col-md-3 text-center ftco-animate">
       			<div class="menu-wrap">
-      				<a href="#" class="menu-img img mb-4" style="background-image: url(images/napolitana.jpg);"></a>
+      				<a href="#" class="menu-img img mb-4" style="background-image: url(assets/images/napolitana.jpg);"></a>
       				<div class="text">
       					<h3><a href="#">Pizza Napolitana</a></h3>
       					<p>Salchicha, jamón, salami, chorizo y tocino</p>
@@ -165,7 +165,7 @@
       		</div>
       		<div class="col-md-3 text-center ftco-animate">
       			<div class="menu-wrap">
-      				<a href="#" class="menu-img img mb-4" style="background-image: url(images/tresquesos.png);"></a>
+      				<a href="#" class="menu-img img mb-4" style="background-image: url(assets/images/tresquesos.png);"></a>
       				<div class="text">
       					<h3><a href="#">Pizza Tres quesos</a></h3>
       					<p>Mezcla de tres quesos</p>
@@ -174,7 +174,7 @@
       		</div>
       		<div class="col-md-3 text-center ftco-animate">
       			<div class="menu-wrap">
-      				<a href="#" class="menu-img img mb-4" style="background-image: url(images/choriqueso.png);"></a>
+      				<a href="#" class="menu-img img mb-4" style="background-image: url(assets/images/choriqueso.png);"></a>
       				<div class="text">
       					<h3><a href="#">Pizza Choriqueso</a></h3>
       					<p>Chorizo y extra queso</p>
@@ -183,7 +183,7 @@
       		</div>
       		<div class="col-md-3 text-center ftco-animate">
       			<div class="menu-wrap">
-      				<a href="#" class="menu-img img mb-4" style="background-image: url(images/BBQ.jpg);"></a>
+      				<a href="#" class="menu-img img mb-4" style="background-image: url(assets/images/BBQ.jpg);"></a>
       				<div class="text">
       					<h3><a href="#">Pizza Pollo BBQ</a></h3>
       					<p>Pollo, piña, tocino y salsa BBQ</p>
@@ -194,7 +194,7 @@
         <div class="row">
     			<div class="col-md-3 text-center ftco-animate">
       			<div class="menu-wrap">
-      				<a href="#" class="menu-img img mb-4" style="background-image: url(images/ranchera.jpg);"></a>
+      				<a href="#" class="menu-img img mb-4" style="background-image: url(assets/images/ranchera.jpg);"></a>
       				<div class="text">
       					<h3><a href="#">Pizza Ranchera</a></h3>
       					<p>Frijoles refritos, jalapeños y chorizo</p>
@@ -203,7 +203,7 @@
       		</div>
       		<div class="col-md-3 text-center ftco-animate">
       			<div class="menu-wrap">
-      				<a href="#" class="menu-img img mb-4" style="background-image: url(images/clasica.jpg);"></a>
+      				<a href="#" class="menu-img img mb-4" style="background-image: url(assets/images/clasica.jpg);"></a>
       				<div class="text">
       					<h3><a href="#">Pizza Clásica</a></h3>
       					<p>Aceitunas, pepperoni, pimiento y champiñones</p>
@@ -212,7 +212,7 @@
       		</div>
       		<div class="col-md-3 text-center ftco-animate">
       			<div class="menu-wrap">
-      				<a href="#" class="menu-img img mb-4" style="background-image: url(images/mexicana.jpg);"></a>
+      				<a href="#" class="menu-img img mb-4" style="background-image: url(assets/images/mexicana.jpg);"></a>
       				<div class="text">
       					<h3><a href="#">Pizza Mexicana</a></h3>
       					<p>Pierna, polllo y jalapeños</p>
@@ -221,7 +221,7 @@
       		</div>
       		<div class="col-md-3 text-center ftco-animate">
       			<div class="menu-wrap">
-      				<a href="#" class="menu-img img mb-4" style="background-image: url(images/Hawaiana.jpg);"></a>
+      				<a href="#" class="menu-img img mb-4" style="background-image: url(assets/images/Hawaiana.jpg);"></a>
       				<div class="text">
       					<h3><a href="#">Pizza Hawaiana</a></h3>
       					<p>Jamón, piña y tocino</p>
@@ -242,7 +242,7 @@
         <div class="row">
         	<div class="col-md-6">
         		<div class="pricing-entry d-flex ftco-animate">
-        			<div class="img" style="background-image: url(images/pizza-1.jpg);"></div>
+        			<div class="img" style="background-image: url(assets/images/pizza-1.jpg);"></div>
         			<div class="desc pl-3">
 	        			<div class="d-flex text align-items-center">
 	        				<h3><span>Una pizza familiar</span></h3>
@@ -251,7 +251,7 @@
         			</div>
         		</div>
         		<div class="pricing-entry d-flex ftco-animate">
-        			<div class="img" style="background-image: url(images/pizza-2.jpg);"></div>
+        			<div class="img" style="background-image: url(assets/images/pizza-2.jpg);"></div>
         			<div class="desc pl-3">
 	        			<div class="d-flex text align-items-center">
 	        				<h3><span>Dos Pizzas Familiares</span></h3>
@@ -260,7 +260,7 @@
 	        		</div>
         		</div>
         		<div class="pricing-entry d-flex ftco-animate">
-        			<div class="img" style="background-image: url(images/pizza-3.jpg);"></div>
+        			<div class="img" style="background-image: url(assets/images/pizza-3.jpg);"></div>
         			<div class="desc pl-3">
 	        			<div class="d-flex text align-items-center">
 	        				<h3><span>Pizza Familiar con Orilla de queso</span></h3>
@@ -269,7 +269,7 @@
 	        		</div>
         		</div>
         		<div class="pricing-entry d-flex ftco-animate">
-        			<div class="img" style="background-image: url(images/pizza-4.jpg);"></div>
+        			<div class="img" style="background-image: url(assets/images/pizza-4.jpg);"></div>
         			<div class="desc pl-3">
 	        			<div class="d-flex text align-items-center">
 	        				<h3><span>Pizza Familiar con queso extra</span></h3>
@@ -278,7 +278,7 @@
 	        		</div>
         		</div>
             <div class="pricing-entry d-flex ftco-animate">
-        			<div class="img" style="background-image: url(images/pizza-5.jpg);"></div>
+        			<div class="img" style="background-image: url(assets/images/pizza-5.jpg);"></div>
         			<div class="desc pl-3">
 	        			<div class="d-flex text align-items-center">
 	        				<h3><span>Una pizza Grande</span></h3>
@@ -287,7 +287,7 @@
 	        		</div>
         		</div>
         		<div class="pricing-entry d-flex ftco-animate">
-        			<div class="img" style="background-image: url(images/pizza-6.jpg);"></div>
+        			<div class="img" style="background-image: url(assets/images/pizza-6.jpg);"></div>
         			<div class="desc pl-3">
 	        			<div class="d-flex text align-items-center">
 	        				<h3><span>Dos pizzas Grandes</span></h3>
@@ -299,7 +299,7 @@
 
         	<div class="col-md-6">
         		<div class="pricing-entry d-flex ftco-animate">
-        			<div class="img" style="background-image: url(images/pizza-7.jpg);"></div>
+        			<div class="img" style="background-image: url(assets/images/pizza-7.jpg);"></div>
         			<div class="desc pl-3">
 	        			<div class="d-flex text align-items-center">
 	        				<h3><span>Pizza Grande con Orilla rellena</span></h3>
@@ -308,7 +308,7 @@
 	        		</div>
         		</div>
         		<div class="pricing-entry d-flex ftco-animate">
-        			<div class="img" style="background-image: url(images/pizza-8.jpg);"></div>
+        			<div class="img" style="background-image: url(assets/images/pizza-8.jpg);"></div>
         			<div class="desc pl-3">
 	        			<div class="d-flex text align-items-center">
                   <h3><span>Pizza Grande con queso extra</span></h3>
@@ -317,7 +317,7 @@
 	        		</div>
         		</div>
             <div class="pricing-entry d-flex ftco-animate">
-        			<div class="img" style="background-image: url(images/pizza-5.jpg);"></div>
+        			<div class="img" style="background-image: url(assets/images/pizza-5.jpg);"></div>
         			<div class="desc pl-3">
 	        			<div class="d-flex text align-items-center">
 	        				<h3><span>Una pizza Mediana</span></h3>
@@ -326,7 +326,7 @@
 	        		</div>
         		</div>
         		<div class="pricing-entry d-flex ftco-animate">
-        			<div class="img" style="background-image: url(images/pizza-6.jpg);"></div>
+        			<div class="img" style="background-image: url(assets/images/pizza-6.jpg);"></div>
         			<div class="desc pl-3">
 	        			<div class="d-flex text align-items-center">
 	        				<h3><span>Dos pizzas Medianas</span></h3>
@@ -335,7 +335,7 @@
 	        		</div>
         		</div>
             <div class="pricing-entry d-flex ftco-animate">
-        			<div class="img" style="background-image: url(images/pizza-7.jpg);"></div>
+        			<div class="img" style="background-image: url(assets/images/pizza-7.jpg);"></div>
         			<div class="desc pl-3">
 	        			<div class="d-flex text align-items-center">
 	        				<h3><span>Pizza Mediana con Orilla rellena</span></h3>
@@ -344,7 +344,7 @@
 	        		</div>
         		</div>
         		<div class="pricing-entry d-flex ftco-animate">
-        			<div class="img" style="background-image: url(images/pizza-8.jpg);"></div>
+        			<div class="img" style="background-image: url(assets/images/pizza-8.jpg);"></div>
         			<div class="desc pl-3">
 	        			<div class="d-flex text align-items-center">
                   <h3><span>Pizza Mediana con queso extra</span></h3>
@@ -443,21 +443,21 @@
   <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
 
 
-  <script src="js/jquery.min.js"></script>
-  <script src="js/jquery-migrate-3.0.1.min.js"></script>
-  <script src="js/popper.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/jquery.easing.1.3.js"></script>
-  <script src="js/jquery.waypoints.min.js"></script>
-  <script src="js/jquery.stellar.min.js"></script>
-  <script src="js/owl.carousel.min.js"></script>
-  <script src="js/jquery.magnific-popup.min.js"></script>
-  <script src="js/aos.js"></script>
-  <script src="js/jquery.animateNumber.min.js"></script>
-  <script src="js/bootstrap-datepicker.js"></script>
-  <script src="js/jquery.timepicker.min.js"></script>
-  <script src="js/scrollax.min.js"></script>
-  <script src="js/main.js"></script>
+  <script src="{{ asset('assets/js/jquery.min.js') }}"></script>
+  <script src="{{ asset('assets/js/jquery-migrate-3.0.1.min.js') }}"></script>
+  <script src="{{ asset('assets/js/popper.min.js') }}"></script>
+  <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
+  <script src="{{ asset('assets/js/jquery.easing.1.3.js') }}"></script>
+  <script src="{{ asset('assets/js/jquery.waypoints.min.js') }}"></script>
+  <script src="{{ asset('assets/js/jquery.stellar.min.js') }}"></script>
+  <script src="{{ asset('assets/js/owl.carousel.min.js') }}"></script>
+  <script src="{{ asset('assets/js/jquery.magnific-popup.min.js') }}"></script>
+  <script src="{{ asset('assets/js/aos.js') }}"></script>
+  <script src="{{ asset('assets/js/jquery.animateNumber.min.js') }}"></script>
+  <script src="{{ asset('assets/js/bootstrap-datepicker.js') }}"></script>
+  <script src="{{ asset('assets/js/jquery.timepicker.min.js') }}"></script>
+  <script src="{{ asset('assets/js/scrollax.min.js') }}"></script>
+  <script src="{{ asset('assets/js/main.js') }}"></script>
     
   </body>
 </html>
