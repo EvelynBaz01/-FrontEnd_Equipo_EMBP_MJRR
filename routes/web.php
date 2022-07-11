@@ -57,3 +57,8 @@ Route::get('/registerProd', function () {
     return view('registerProd');
 })->name('registrar_producto');
 
+
+
+Route::get('/usuarios/index', 'App\Http\Controllers\UsuarioController@index');
+Route::get('/usuarios/create', 'App\Http\Controllers\UsuarioController@create');
+Route::post('/usuarios/store', 'App\Http\Controllers\UsuarioController@store');

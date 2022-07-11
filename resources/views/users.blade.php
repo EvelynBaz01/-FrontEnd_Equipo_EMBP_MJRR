@@ -52,7 +52,7 @@
             <li><a class="app-menu__item" href="{{ route('panel_adm') }}"><i class="app-menu__icon fa fa-id-card-o"></i><span class="app-menu__label">Inicio</span></a></li>
             <li class="treeview"><a class="app-menu__item active" href="" data-toggle="treeview"><i class="app-menu__icon icon fa fa-users"></i><span class="app-menu__label">Usuarios</span><i class="treeview-indicator fa fa-angle-right"></i></a>
               <ul class="treeview-menu">
-                <li><a class="treeview-item" href="{{ route('lista_usuarios') }}"><i class="icon fa fa-circle-o"></i> Lista de usuarios</a></li>
+                <li><a class="treeview-item" href="{{ '/usuarios/index' }}"><i class="icon fa fa-circle-o"></i> Lista de usuarios</a></li>
                 <li><a class="treeview-item" href="{{ route('registrar_usuario') }}"><i class="icon fa fa-circle-o"></i> Registrar usuarios</a></li>
               </ul>
             </li>
@@ -75,28 +75,27 @@
       <div class="row">
         <div class="col-md-12">
           <div class="tile">
-            <p><a class="btn btn-primaryV icon-btn" href="{{ route('registrar_usuario') }}"><i class="fa fa-plus"></i>Agregar usuario</a></p>
+            <p><a class="btn btn-primaryV icon-btn" href="{{ '/usuarios/create' }}"><i class="fa fa-plus"></i>Agregar usuario</a></p>
             <div class="tile-body">
               <table class="table table-striped">
                 <thead align="center">
                   <tr>
                     <th>#</th>
                     <th>Imagen</th>
-                    <th>Usuario</th>
-                    <th>Contraseña</th>
                     <th>Nombre(s)</th>
                     <th>Apellidos</th>
+                    <th>Usuario</th>
                     <th>Acciones</th>
                   </tr>
                 </thead>
                 <tbody align="center">
+                    @foreach($usuarios as $user)
                   <tr>
-                    <td>1</td>
-                    <td><img src="" alt="user1"></td>
-                    <td>Eve14</td>
-                    <td>nfjdnjfdj</td>
-                    <td>Evelyn</td>
-                    <td>Baz Pérez</td>
+                    <td>{{ $loop->index }}</td>
+                    <td>{{ $user->imagen }}<img src="" alt="user1"></td>
+                    <td>{{ $user->nombre }}</td>
+                    <td>{{ $user->a_paterno }} {{ $user->a_materno }}</td>
+                    <td>{{ $user->usuario }}</td>
                     <td>
                       <div class="btn-group">
                         <a class="btn btn-primaryA" href="{{ route('registrar_usuario') }}"><i class="fa fa-lg fa-edit"></i></a>
@@ -104,34 +103,7 @@
                       </div>
                     </td>
                   </tr>
-                  <tr>
-                    <td>2</td>
-                    <td><img src="" alt="user1"></td>
-                    <td>Marijo10</td>
-                    <td>ncdncjdnj</td>
-                    <td>María José</td>
-                    <td>Romero Rosas</td>
-                    <td>
-                      <div class="btn-group">
-                        <a class="btn btn-primaryA" href="{{ route('registrar_usuario') }}"><i class="fa fa-lg fa-edit"></i></a>
-                        <a class="btn btn-primaryR" onclick="return confirm('El registro no estará disponible para operaciones en el sistema.')" href="#"><i class="fa fa-lg fa-trash"></i></a>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>3</td>
-                    <td><img src="" alt="user1"></td>
-                    <td>Uri17</td>
-                    <td>njdnjcd</td>
-                    <td>Carlos Uriel</td>
-                    <td>Hernández Martínez</td>
-                    <td>
-                      <div class="btn-group">
-                        <a class="btn btn-primaryA" href="{{ route('registrar_usuario') }}"><i class="fa fa-lg fa-edit"></i></a>
-                        <a class="btn btn-primaryR" onclick="return confirm('El registro no estará disponible para operaciones en el sistema.')" href="#"><i class="fa fa-lg fa-trash"></i></a>
-                      </div>
-                    </td>
-                  </tr>
+                    @endforeach
                 </tbody>
               </table>
             </div>
