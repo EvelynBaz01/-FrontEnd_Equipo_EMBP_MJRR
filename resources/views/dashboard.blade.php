@@ -52,7 +52,7 @@
             <li><a class="app-menu__item active" href="{{ route('panel_adm') }}"><i class="app-menu__icon fa fa-id-card-o"></i><span class="app-menu__label">Inicio</span></a></li>
             <li class="treeview"><a class="app-menu__item" href="" data-toggle="treeview"><i class="app-menu__icon icon fa fa-users"></i><span class="app-menu__label">Usuarios</span><i class="treeview-indicator fa fa-angle-right"></i></a>
               <ul class="treeview-menu">
-                <li><a class="treeview-item" href="{{ route('lista_usuarios') }}"><i class="icon fa fa-circle-o"></i> Lista de usuarios</a></li>
+                <li><a class="treeview-item" href="{{ '/usuarios/index' }}"><i class="icon fa fa-circle-o"></i> Lista de usuarios</a></li>
                 <li><a class="treeview-item" href="{{ route('registrar_usuario') }}"><i class="icon fa fa-circle-o"></i> Registrar usuarios</a></li>
               </ul>
             </li>
