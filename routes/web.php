@@ -62,3 +62,5 @@ Route::get('/registerProd', function () {
 Route::get('/usuarios/index', 'App\Http\Controllers\UsuarioController@index');
 Route::get('/usuarios/create', 'App\Http\Controllers\UsuarioController@create');
 Route::post('/usuarios/store', 'App\Http\Controllers\UsuarioController@store');
+Route::get('/usuarios/edit/{id}', 'App\Http\Controllers\UsuarioController@edit');
+Route::put('/usuarios/update/{id}', 'App\Http\Controllers\UsuarioController@update');
