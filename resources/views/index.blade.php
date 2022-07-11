@@ -33,7 +33,7 @@
 	        <ul class="navbar-nav ml-auto">
 	          <li class="nav-item active"><a href="{{ route('inicio') }}" class="nav-link">Inicio</a></li>
 	          <li class="nav-item"><a href="{{ route('quienes_somos') }}" class="nav-link">¿Quiénes Somos?</a></li>
-			  <li class="nav-item"><a href="{{ route('servicio') }}" class="nav-link">Servicios</a></li>
+			  <li class="nav-item"><a href="{{ route('servicios') }}" class="nav-link">Servicios</a></li>
 	          <li class="nav-item"><a href="{{ route('contacto') }}" class="nav-link">Contacto</a></li>
 			  <li class="nav-item"><a href="{{ route('iniciar_sesion') }}" class="nav-link">Iniciar Sesión</a></li>
 	        </ul>

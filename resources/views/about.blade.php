@@ -31,11 +31,11 @@
 		      </button>
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav ml-auto">
-	          <li class="nav-item"><a href="index.blade.php" class="nav-link">Inicio</a></li>
-	          <li class="nav-item active"><a href="about.blade.php" class="nav-link">¿Quiénes Somos?</a></li>
-			  <li class="nav-item"><a href="services.blade.php" class="nav-link">Servicios</a></li>
-	          <li class="nav-item"><a href="contact.blade.php" class="nav-link">Contacto</a></li>
-			  <li class="nav-item"><a href="login.blade.php" class="nav-link">Iniciar Sesión</a></li>
+	          <li class="nav-item"><a href="{{ route('inicio') }}" class="nav-link">Inicio</a></li>
+	          <li class="nav-item active"><a href="{{ route('quienes_somos') }}" class="nav-link">¿Quiénes Somos?</a></li>
+			  <li class="nav-item"><a href="{{ route('servicios') }}" class="nav-link">Servicios</a></li>
+	          <li class="nav-item"><a href="{{ route('contacto') }}" class="nav-link">Contacto</a></li>
+			  <li class="nav-item"><a href="{{ route('iniciar_sesion') }}" class="nav-link">Iniciar Sesión</a></li>
 	        </ul>
 	      </div>
 		  </div>
