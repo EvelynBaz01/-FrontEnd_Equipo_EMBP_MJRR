@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
   <head>
     <title>Pizzas Rossely</title>
     <meta charset="utf-8">
@@ -9,33 +9,33 @@
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Nothing+You+Could+Do" rel="stylesheet">
 
-    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
-    <link rel="stylesheet" href="css/animate.css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="css/magnific-popup.css">
-    <link rel="stylesheet" href="css/aos.css">
-    <link rel="stylesheet" href="css/ionicons.min.css">
-    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
-    <link rel="stylesheet" href="css/jquery.timepicker.css">
-    <link rel="stylesheet" href="css/flaticon.css">
-    <link rel="stylesheet" href="css/icomoon.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="{{ asset('assets/css/open-iconic-bootstrap.min.css') }}"> 
+    <link rel="stylesheet" href="{{ asset('assets/css/animate.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/owl.theme.default.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/magnific-popup.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/aos.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/ionicons.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap-datepicker.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/jquery.timepicker.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/flaticon.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/icomoon.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
   </head>
   <body>
 	<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 	    <div class="container">
-		      <a class="navbar-brand" href="index.html"><span class="flaticon-pizza-1 mr-1"></span>Pizzas<br><small>Rossely</small></a>
+		      <a class="navbar-brand" href="index.blade.php"><span class="flaticon-pizza-1 mr-1"></span>Pizzas<br><small>Rossely</small></a>
 		      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 		        <span class="oi oi-menu"></span> Menú
 		      </button>
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav ml-auto">
-	          <li class="nav-item"><a href="index.html" class="nav-link">Inicio</a></li>
-	          <li class="nav-item active"><a href="about.html" class="nav-link">¿Quiénes Somos?</a></li>
-			  <li class="nav-item"><a href="services.html" class="nav-link">Servicios</a></li>
-	          <li class="nav-item"><a href="contact.html" class="nav-link">Contacto</a></li>
-			  <li class="nav-item"><a href="login.html" class="nav-link">Iniciar Sesión</a></li>
+	          <li class="nav-item"><a href="index.blade.php" class="nav-link">Inicio</a></li>
+	          <li class="nav-item active"><a href="about.blade.php" class="nav-link">¿Quiénes Somos?</a></li>
+			  <li class="nav-item"><a href="services.blade.php" class="nav-link">Servicios</a></li>
+	          <li class="nav-item"><a href="contact.blade.php" class="nav-link">Contacto</a></li>
+			  <li class="nav-item"><a href="login.blade.php" class="nav-link">Iniciar Sesión</a></li>
 	        </ul>
 	      </div>
 		  </div>
@@ -44,7 +44,7 @@
 
     <section class="home-slider owl-carousel img" style="background-image: url(images/bg_1.jpg);">
 
-      <div class="slider-item" style="background-image: url(images/bg_3.jpg);">
+      <div class="slider-item" style="background-image: url(assets/images/bg_3.jpg);">
       	<div class="overlay"></div>
         <div class="container">
           <div class="row slider-text justify-content-center align-items-center">
@@ -58,7 +58,7 @@
     </section>
 
     <section class="ftco-about d-md-flex">
-    	<div class="one-half img" style="background-image: url(images/about.jpg);"></div>
+    	<div class="one-half img" style="background-image: url(assets/images/about.jpg);"></div>
     	<div class="one-half ftco-animate">
         <div class="heading-section ftco-animate ">
           <h2 align="center" class="mb-4"><span class="flaticon-pizza">Pizzas Rossely</span></h2>
@@ -88,9 +88,9 @@
         <div class="row">
         	<div class="col-lg-3 d-flex mb-sm-4 ftco-animate">
         		<div class="staff">
-      				<div class="img mb-4" style="background-image: url(images/gallery-4.jpg);"></div>
+      				<div class="img mb-4" style="background-image: url(assets/images/gallery-4.jpg);"></div>
       				<div class="info text-center">
-      					<h3><a href="teacher-single.html">Misión</a></h3>
+      					<h3><a>Misión</a></h3>
       					<div class="text">
 	        				<p align="justify">Desarrollar una empresa que forme parte de la vida de cada familia. Ofreciendo nuestros Servicios
 								a domicilio jutno con nuestros productos de calidad, convirtiendonos en una opción rápida en la venta de nuestras
@@ -102,9 +102,9 @@
         	</div>
         	<div class="col-lg-3 d-flex mb-sm-4 ftco-animate">
         		<div class="staff">
-      				<div class="img mb-4" style="background-image: url(images/gallery-3.jpg);"></div>
+      				<div class="img mb-4" style="background-image: url(assets/images/gallery-3.jpg);"></div>
       				<div class="info text-center">
-      					<h3><a href="teacher-single.html">Visión</a></h3>
+      					<h3><a>Visión</a></h3>
       					<div class="text">
 	        				<p align="justify">Ser una empresa reconocida por los buenos servicios que ofrece. Que PIZZAS ROSSELY se encuentre 
 								cerca de cada uno de nuestros clientes, logrando ser un símbolo de calidad, diferencia e innovación.</p>
@@ -114,9 +114,9 @@
         	</div>
         	<div class="col-lg-3 d-flex mb-sm-4 ftco-animate">
         		<div class="staff">
-      				<div class="img mb-4" style="background-image: url(images/valores.jpg);"></div>
+      				<div class="img mb-4" style="background-image: url(assets/images/valores.jpg);"></div>
       				<div class="info text-center">
-      					<h3><a href="teacher-single.html">Valores</a></h3>
+      					<h3><a>Valores</a></h3>
       					<div class="text">
 	        				<p align="justify">Entre los más importantes se encuentran:<br>
 								<ul>
@@ -136,9 +136,9 @@
         	</div>
         	<div class="col-lg-3 d-flex mb-sm-4 ftco-animate">
         		<div class="staff">
-      				<div class="img mb-4" style="background-image: url(images/HabilidadAct.jpg);"></div>
+      				<div class="img mb-4" style="background-image: url(assets/images/HabilidadAct.jpg);"></div>
       				<div class="info text-center">
-      					<h3><a href="teacher-single.html">Habilidades y Actitudes</a></h3>
+      					<h3><a>Habilidades y Actitudes</a></h3>
       					<div class="text">
 	        				<p align="justify"> Damos lo que somos<br>
 								<ul>
@@ -159,7 +159,7 @@
     </section>
 
 
-		<section class="ftco-counter ftco-bg-dark img" id="section-counter" style="background-image: url(images/bg_2.jpg);" data-stellar-background-ratio="0.5">
+		<section class="ftco-counter ftco-bg-dark img" id="section-counter" style="background-image: url(assets/images/bg_2.jpg);" data-stellar-background-ratio="0.5">
 			<div class="overlay"></div>
       <div class="container">
         <div class="row justify-content-center">
@@ -291,21 +291,21 @@
   <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
 
 
-  <script src="js/jquery.min.js"></script>
-  <script src="js/jquery-migrate-3.0.1.min.js"></script>
-  <script src="js/popper.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/jquery.easing.1.3.js"></script>
-  <script src="js/jquery.waypoints.min.js"></script>
-  <script src="js/jquery.stellar.min.js"></script>
-  <script src="js/owl.carousel.min.js"></script>
-  <script src="js/jquery.magnific-popup.min.js"></script>
-  <script src="js/aos.js"></script>
-  <script src="js/jquery.animateNumber.min.js"></script>
-  <script src="js/bootstrap-datepicker.js"></script>
-  <script src="js/jquery.timepicker.min.js"></script>
-  <script src="js/scrollax.min.js"></script>
-  <script src="js/main.js"></script>
+  <script src="{{ asset('assets/js/jquery.min.js') }}"></script>
+  <script src="{{ asset('assets/js/jquery-migrate-3.0.1.min.js') }}"></script>
+  <script src="{{ asset('assets/js/popper.min.js') }}"></script>
+  <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
+  <script src="{{ asset('assets/js/jquery.easing.1.3.js') }}"></script>
+  <script src="{{ asset('assets/js/jquery.waypoints.min.js') }}"></script>
+  <script src="{{ asset('assets/js/jquery.stellar.min.js') }}"></script>
+  <script src="{{ asset('assets/js/owl.carousel.min.js') }}"></script>
+  <script src="{{ asset('assets/js/jquery.magnific-popup.min.js') }}"></script>
+  <script src="{{ asset('assets/js/aos.js') }}"></script>
+  <script src="{{ asset('assets/js/jquery.animateNumber.min.js') }}"></script>
+  <script src="{{ asset('assets/js/bootstrap-datepicker.js') }}"></script>
+  <script src="{{ asset('assets/js/jquery.timepicker.min.js') }}"></script>
+  <script src="{{ asset('assets/js/scrollax.min.js') }}"></script>
+  <script src="{{ asset('assets/js/main.js') }}"></script>
     
   </body>
 </html>
