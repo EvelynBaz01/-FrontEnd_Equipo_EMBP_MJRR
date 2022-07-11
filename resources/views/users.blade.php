@@ -85,7 +85,7 @@
                     <th>Nombre(s)</th>
                     <th>Apellidos</th>
                     <th>Usuario</th>
-                    <th>Acciones</th>
+                    <th colspan="2">Acciones</th>
                   </tr>
                 </thead>
                 <tbody align="center">
@@ -98,9 +98,15 @@
                     <td>{{ $user->usuario }}</td>
                     <td>
                       <div class="btn-group">
-                        <a class="btn btn-primaryA" href="{{ route('registrar_usuario') }}"><i class="fa fa-lg fa-edit"></i></a>
-                        <a class="btn btn-primaryR" onclick="return confirm('El registro no estará disponible para operaciones en el sistema.')" href="#"><i class="fa fa-lg fa-trash"></i></a>
+                        <a class="btn btn-primaryA" onclick="location.href='{{ url('usuarios/edit/'.$usuarios->id) }}'"><i class="fa fa-lg fa-edit"></i></a>
                       </div>
+                    </td>
+                    <td>
+                      <form action="{{ action('App\Http\Controllers\UsuarioController@destroy', $usuarios->id) }}" method="POST">
+                        {{ method_field('DELETE') }}
+                        {{ @csrf_field() }}
+                        <a class="btn btn-primaryR" onclick="return confirm('El registro no estará disponible para operaciones en el sistema.')"><i class="fa fa-lg fa-trash"></i></a>
+                      </form>
                     </td>
                   </tr>
                     @endforeach

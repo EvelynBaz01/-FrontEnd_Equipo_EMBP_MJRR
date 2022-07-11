@@ -69,65 +69,68 @@
     <main class="app-content">
       <div class="app-title">
         <div >
-          <h1>NUEVO REGISTRO DE USUARIO</h1>
+          <h1>ACTUALIZAR USUARIO</h1>
         </div>
       </div>
       <div class="row">
         <div class="col-md-12">
-          <div class="tile">
-                <form  novalidate method="POST" action="{{ url('/usuarios/store') }}">
+            <div class="tile">
+                @foreach($usuarios as $usuarios)
+                <form  novalidate method="POST" action="{{ action('App\Http\Controllers\usuarioController@update', $usuarios->id) }}">
+                {{ method_field('PUT') }}
                 {{ @csrf_field() }}  
-            <div class="tile-body row">
-                    <div class="col-md-4">
-                        <div class="form-group">
-                        <label for="img">Foto</label>
-                        <input class="form-control" name="imagen" type="file" required="obligatorio">
+                    <div class="tile-body row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                <label for="img">Foto</label>
+                                <input class="form-control" name="imagen" type="file" value="{{ $usuarios->imagen}}" required="obligatorio">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                <label for="nombre">Nombre</label>
+                                <input type="text" class="form-control" name="nombre" id="nombre" value="{{ $usuarios->nombre}}" required="obligatorio" minlength="3" maxlength="40">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                <label for="Apellido_pat">Apellido Paterno</label>
+                                <input type="text" class="form-control" name="a_paterno" id="Apellido_pat" value="{{ $usuarios->a_paterno}}" required="obligatorio" minlength="3" maxlength="40">
+                                </div>
+                            </div>
+                    </div> 
+                    <div class="tile-body row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="Apellido_mat">Apellido Materno</label>
+                                <input type="text" class="form-control" name="a_materno" id="Apellido_mat" value="{{ $usuarios->a_materno}}" required="obligatorio" minlength="3" maxlength="40">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="usuario">Usuario</label>
+                                <input type="text" class="form-control" name="usuario" id="usuario" value="{{ $usuarios->usuario}}" required="obligatorio" minlength="3" maxlength="40">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="password">Contraseña</label>
+                                <input type="password" class="form-control" name="contrasena" id="password" value="{{ $usuarios->contrasena}}" required="obligatorio" minlength="3" maxlength="40">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <button type="submit" onclick="Alertabtn()" class="btn btn-primaryV rounded submit py-3 px-4">
+                                        Guardar
+                                </button>
+                                <a type="submit" onclick="AlertaCancel()"  href="{{ route('registrar_usuario') }}" class="btn btn-primaryG rounded submit py-3 px-4">
+                                        Cancelar
+                                </a>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-md-4">
-                        <div class="form-group">
-                        <label for="nombre">Nombre</label>
-                        <input type="text" class="form-control" name="nombre" id="nombre" required="obligatorio" minlength="3" maxlength="40">
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="form-group">
-                        <label for="Apellido_pat">Apellido Paterno</label>
-                        <input type="text" class="form-control" name="a_paterno" id="Apellido_pat" required="obligatorio" minlength="3" maxlength="40">
-                        </div>
-                    </div>
-            </div> 
-            <div class="tile-body row">
-                    <div class="col-md-4">
-                        <div class="form-group">
-                        <label for="Apellido_mat">Apellido Materno</label>
-                        <input type="text" class="form-control" name="a_materno" id="Apellido_mat" required="obligatorio" minlength="3" maxlength="40">
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="form-group">
-                        <label for="usuario">Usuario</label>
-                        <input type="text" class="form-control" name="usuario" id="usuario" required="obligatorio" minlength="3" maxlength="40">
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="form-group">
-                        <label for="password">Contraseña</label>
-                        <input type="password" class="form-control" name="contrasena" id="password" required="obligatorio" minlength="3" maxlength="40">
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="form-group">
-                        <button type="submit" onclick="Alertabtn()" class="btn btn-primaryV rounded submit py-3 px-4">
-                            Guardar
-                        </button>
-                        <a type="submit" onclick="AlertaCancel()"  href="{{ route('registrar_usuario') }}" class="btn btn-primaryG rounded submit py-3 px-4">
-                            Cancelar
-                        </a>
-                        </div>
-                    </div>
-            </div>
                 </form>
+                @endforeach
             </div> 
           </div>
         </div>
